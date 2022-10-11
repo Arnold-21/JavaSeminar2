@@ -2,7 +2,10 @@ import Controller.Controller;
 import Model.Apple;
 import Model.Book;
 import Model.Cake;
+import Model.Item;
 import Repository.Repository;
+
+import java.util.List;
 
 public class Main {
     public static <Apple> void main(String[] args) {
@@ -18,7 +21,9 @@ public class Main {
         repo.addItem(a);
         Controller cont = new Controller(repo);
 
-
-        cont.printItems();
+        List<Item> items = cont.getItems();
+        for (Item e: items){
+            System.out.println(e.getName());
+        }
     }
 }

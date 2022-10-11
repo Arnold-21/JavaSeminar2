@@ -12,10 +12,7 @@ public class Controller {
         this.repo = rep;
     }
 
-    public void printItems(){
-        List<Item> items = repo.getItems200();
-        for (Item e:items){
-            System.out.println(e.getName());
-        }
+    public List<Item> getItems(){
+        return repo.getItems200();
     }
 }
