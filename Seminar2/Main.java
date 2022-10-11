@@ -4,6 +4,7 @@ import Model.Book;
 import Model.Cake;
 import Model.Item;
 import Repository.Repository;
+import View.View;
 
 import java.util.List;
 
@@ -20,10 +21,8 @@ public class Main {
         repo.addItem(c);
         repo.addItem(a);
         Controller cont = new Controller(repo);
+        View view = new View(cont);
 
-        List<Item> items = cont.getItems();
-        for (Item e: items){
-            System.out.println(e.getName());
-        }
+        view.printItems();
     }
 }
